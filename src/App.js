@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import axios from 'axios';
+import Card from "./component/Card";
 
 class App extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class App extends Component {
         <h1>Hai</h1>
         <h2>{this.state.test}</h2>
         <ul>
-          {this.state.lists.map(list => <li>{list.first_name}</li>)}
+          {!!this.state.lists.length && this.state.lists.map((item) => <Card data = {item} />)}
         </ul>
       </>
      );
